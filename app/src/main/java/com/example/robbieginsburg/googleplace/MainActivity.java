@@ -24,6 +24,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
         googleMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
+        // disables the gps and navigation buttons on the bottom right of the screen
+        UiSettings uiSettings = googleMap.getUiSettings();
+        uiSettings.setMapToolbarEnabled(false);
 
         lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         location = new MyLocationListener();
@@ -188,8 +192,6 @@ public class MainActivity extends AppCompatActivity implements PlaceSelectionLis
             // additionally checks to make sure the location is not the same
             // if the location hasn't changed, there is no need to update the marker
             if((userLocation != null) && (lastUserLocation != userLocation)){
-
-                Log.d("Location has", "been changed");
 
                 // updates the marker for the user's selected place
                 if(userMarker != null) userMarker.remove();
