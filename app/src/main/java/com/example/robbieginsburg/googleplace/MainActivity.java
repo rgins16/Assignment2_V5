@@ -1,3 +1,8 @@
+/*
+* Authors:
+* Robert Ginsburg
+* Asen Radov
+*/
 package com.example.robbieginsburg.googleplace;
 
 import android.Manifest;
