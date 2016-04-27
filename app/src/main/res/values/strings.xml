@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GooglePlace</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_my_location_listener">MyLocationListener</string>
+    <string name="google_app_id">composed-hangar-129320</string>
+</resources>
